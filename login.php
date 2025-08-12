@@ -218,3 +218,33 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
                         window.location.reload();
                     }, 1000);
                 </script>
+<?php endif; ?>
+            
+            <form method="POST">
+                <div class="form-group">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="johndoe@gmail.com" 
+                        required
+                        value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : 'johndoe@gmail.com'; ?>"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="login-btn">Log in</button>
+            </form>
+            
+            <a href="index.html" class="back-link">← Back to static version</a>
+        <?php endif; ?>
+    </div>
+</body>
+</html>
