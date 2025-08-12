@@ -8,7 +8,7 @@ if (isset($_POST['logout'])) {
 }
 
 $valid_users = [
-    'johndoe@gmail.com' => 'password123'
+    'jamest@gmail.com' => 'password123'
 ];
 
 $error_message = '';
