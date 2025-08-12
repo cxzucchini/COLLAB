@@ -227,7 +227,7 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
                         name="email" 
                         placeholder="jamest@gmail.com" 
                         required
-                        value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : 'johndoe@gmail.com'; ?>"
+                        value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : 'jamest@gmail.com'; ?>"
                     >
                 </div>
                 
