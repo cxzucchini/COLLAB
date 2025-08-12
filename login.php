@@ -31,3 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['logout'])) {
         $error_message = 'Invalid email or password';
     }
 }
+
+$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $is_logged_in ? 'Dashboard' : 'Login'; ?></title>
