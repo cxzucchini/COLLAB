@@ -100,3 +100,36 @@
             display: none;
         }
     </style>
+    </head>
+<body>
+    <div class="login-container">
+        <h1>Log in</h1>
+        
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+        
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="form-group">
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="johndoe@gmail.com" 
+                    required
+                    value="johndoe@gmail.com"
+                >
+            </div>
+            
+            <div class="form-group">
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Password" 
+                    required
+                >
+            </div>
+            
+            <button type="submit" class="login-btn">Log in</button>
+        </form>
+    </div>
