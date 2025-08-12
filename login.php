@@ -182,3 +182,39 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
             text-decoration: underline;
         }
     </style>
+</head>
+<body>
+    <div class="container">
+        <?php if ($is_logged_in): ?>
+            <!-- Dashboard View -->
+            <div class="dashboard-header">
+                <h1>Dashboard</h1>
+                <form method="POST" style="margin: 0;">
+                    <input type="hidden" name="logout" value="1">
+                    <button type="submit" class="logout-btn">Logout</button>
+                </form>
+            </div>
+            
+            <div class="user-info">
+                <h3>Welcome back!</h3>
+                <p>You have successfully logged in to your account.</p>
+                <p><strong>Email:</strong> <?php echo htmlspecialchars($_SESSION['user_email']); ?></p>
+                <p><strong>Status:</strong> Logged In</p>
+                <p><strong>Session Active:</strong> Yes</p>
+            </div>
+            
+        <?php else: ?>
+            <!-- Login View -->
+            <h1>Log in</h1>
+            
+            <?php if ($error_message): ?>
+                <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+            <?php endif; ?>
+            
+            <?php if ($success_message): ?>
+                <div class="success-message"><?php echo htmlspecialchars($success_message); ?></div>
+                <script>
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                </script>
